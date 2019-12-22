@@ -1,0 +1,27 @@
+%% step1. initialize point2d 
+
+pntA = Point2D(3,4);    % there is initial values
+pntB = Point2D();       % there is no initial value(pntB = [0, 0])
+
+%% step2. draw point2d 
+
+f figure;
+ax = gca;
+hold on; grid on; box on;
+pnt.Draw(ax, 'r','x');
+savefig("./fig/fig1 - draw pnt2d.jpg",gcf)
+
+
+pnt1 = Point2D(3,4);
+pnt2 = Point2D(5,6);
+
+line = Line2D(pnt1, pnt2);
+
+
+figure;
+ax = gca;
+hold on; grid on; box on;
+pnt.Draw(ax, 'r','x');
+line.Draw(ax, 'g','o');
+
+axis([-10 10 -10 10]);
