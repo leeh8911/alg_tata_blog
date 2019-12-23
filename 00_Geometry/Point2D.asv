@@ -3,9 +3,6 @@ classdef Point2D
         x;
         y;
     end
-    properties(Access = private)
-        dist;
-    end
     methods(Access = public)
         function obj = Point2D(x, y)
             if(nargin == 0)
@@ -22,19 +19,14 @@ classdef Point2D
         end
         
         function val = DistToTarget(obj, target)
-            if(isnan(obj.dist))
-            obj.dist = norm([obj.x - target.x, obj.y - target.y],2);
-            end
-            val = obj.dist;
+            
+            val = norm([obj.x - target.x, obj.y - target.y],2);
             return;
         end
-        
         function val = PrintDist(obj, target, ax, c, m)
-            if(isnan(obj.dist))
-            obj = obj.DistToTarget(target);
-            end
-            val = obj.dist;
-            text(ax, sum([obj.x, target.x])/2, sum([obj.x, target.x])/2, sprintf("distance : %f", val), 'color',c);
+            dist = obj.DistToTarget(
+            text(ax, sum([obj.x, target.x])/2, sum([obj.x, target.x])/2,sprintf("distance : %f", 
+            
             plot(ax, [obj.x, target.x], [obj.y, target.y], 'color', c, 'marker', m);
         end
     end
