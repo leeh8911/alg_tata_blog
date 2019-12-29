@@ -47,7 +47,6 @@ int main(void)
 	vec1.ConstMult(10.f, &result);
 	printf("10 * vec1 : ");
 	result.PrintVector();
-
 	double dot_val = vec1.Dot(vec2);
 	printf("dot value : %f", dot_val);
 
