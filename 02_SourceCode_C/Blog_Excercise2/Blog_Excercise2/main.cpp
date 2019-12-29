@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include "alg_tata_library/alg_tata_interface.h"
 
 char isIntersect(float* A, float* B, float* C, float* D, float* H);
 
 
-void main(void)
+int main(void)
 {
 	float A[2] = { 1, 1 };
 	float B[2] = { -1, -1 };
@@ -22,6 +23,36 @@ void main(void)
 	printf("l1-l2 is intersect?  %c, [%f, %f]\n", intersectl1l2 ? 'o' : 'x', H1[0], H1[1]);
 	printf("l2-l3 is intersect?  %c, [%f, %f]\n", intersectl2l3 ? 'o' : 'x', H2[0], H2[1]);
 	printf("l1-l3 is intersect?  %c, [%f, %f]\n", intersectl1l3 ? 'o' : 'x', H3[0], H3[1]);
+
+
+	PointObject vec1;
+	PointObject vec2;
+
+	vec1.SetVector(1, 1);
+	vec2.SetVector(-1, -1);
+
+	double x, y;
+	vec1.GetVector(&x, &y);
+	printf("get vector1 [%f, %f]\n", x, y);
+	vec2.GetVector(&x, &y);
+	printf("get vector2 [%f, %f]\n", x, y);
+
+	PointObject result;
+	vec1.Add(vec2, &result);
+	printf("vec1 + vec2 : ");
+	result.PrintVector();
+	vec1.Diff(vec2, &result);
+	printf("vec1 - vec2 : ");
+	result.PrintVector();
+	vec1.ConstMult(10.f, &result);
+	printf("10 * vec1 : ");
+	result.PrintVector();
+
+	double dot_val = vec1.Dot(vec2);
+	printf("dot value : %f", dot_val);
+
+
+	return 0;
 }
 
 

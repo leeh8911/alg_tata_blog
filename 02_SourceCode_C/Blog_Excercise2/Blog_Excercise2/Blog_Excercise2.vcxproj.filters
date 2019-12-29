@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="alg_tata_library">
+      <UniqueIdentifier>{e334e762-6ab4-4f75-a9e2-7acfb3ff5f48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="alg_tata_library\PointObject.cpp">
+      <Filter>alg_tata_library</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="alg_tata_library\PointObject.h">
+      <Filter>alg_tata_library</Filter>
+    </ClInclude>
+    <ClInclude Include="alg_tata_library\alg_tata_interface.h">
+      <Filter>alg_tata_library</Filter>
+    </ClInclude>
+    <ClInclude Include="alg_tata_library\includes.h">
+      <Filter>alg_tata_library</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
