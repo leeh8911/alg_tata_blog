@@ -6,7 +6,7 @@ axis_param = [-5, 20, -5, 20];
 
 %% first step : define frames
 frame1.angle = 30;
-frame1.org_x = -3;
+frame1.org_x = 3;
 frame1.org_y = 5;
 
 frame2.angle = 0;
@@ -37,9 +37,9 @@ while(1)
     if ~start_flag
         if abs(frameTR.angle - frame2.angle) > 1e-3
             frameTR.angle = frameTR.angle + (frame2.angle - frame1.angle)/5;
-        elseif abs(frameTR.org_x - frame2.org_x) > 1e-3
+        elseif abs(frameTR.org_x - frame2.org_x) > 1
             frameTR.org_x = frameTR.org_x + (frame2.org_x - frame1.org_x)/5;
-        elseif abs(frameTR.org_y - frame2.org_y) > 1e-3
+        elseif abs(frameTR.org_y - frame2.org_y) > 1
             frameTR.org_y = frameTR.org_y + (frame2.org_y - frame1.org_y)/5;
         else
             end_flag = true;
